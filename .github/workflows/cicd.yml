@@ -1,0 +1,25 @@
+name: ec2-deployment
+on:
+    push:
+        branches:
+            master
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        steps:
+            - name: checkout 
+              run: actions/checkout@v4
+            - name: docker login
+              run: docker login -u hariharan0298 -p hk27love2g4e
+            - name: build docker image
+              run: docker build -t hariharan0298/ec2-instance .
+            - name: push image
+              run: docker push hariharan0298/ec2-instance:latest
+    deploy:
+        needs: build
+        runs-on: aws-ec2
+        steps:
+            - name: pull docker image
+              run: docker pull hariharan0298/ec2-instance:latest
+            - name: run container
+              run: docker run -d -p 3000:80 --name reactInstanceContainer  hariharan0298/ec2-instance
