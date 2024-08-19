@@ -24,4 +24,4 @@ jobs:
             - name: pull docker image
               run: sudo docker pull hariharan0298/ec2-instance:latest
             - name: run container
-              run: docker run -d -p 3000:80 --name reactInstanceContainer  hariharan0298/ec2-instance
+              run: sudo docker run -d -p 3000:80 --name reactInstanceContainer  hariharan0298/ec2-instance
