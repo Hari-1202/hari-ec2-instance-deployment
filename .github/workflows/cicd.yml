@@ -22,6 +22,6 @@ jobs:
             - name: docker login
               run: docker login -u ${{secrets.DOCKER_USERNANE}} -p ${{secrets.DOCKER_PWD}}      
             - name: pull docker image
-              run: docker pull hariharan0298/ec2-instance:latest
+              run: sudo docker pull hariharan0298/ec2-instance:latest
             - name: run container
               run: docker run -d -p 3000:80 --name reactInstanceContainer  hariharan0298/ec2-instance
