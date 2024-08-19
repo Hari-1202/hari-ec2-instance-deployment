@@ -8,7 +8,7 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: checkout 
-              run: actions/checkout@v3
+              uses: actions/checkout@v3
             - name: docker login
               run: docker login -u hariharan0298 -p hk27love2g4e
             - name: build docker image
