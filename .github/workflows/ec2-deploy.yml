@@ -20,8 +20,9 @@ jobs:
         run: |
           npm install --legacy-peer-deps
           npm run build
-          
+          mkdir -p /var/www/html
           sudo cp -r ./build/* /var/www/html
+          echo ls "/var/www/html"
 
       - name: Restart Nginx
         run: |
