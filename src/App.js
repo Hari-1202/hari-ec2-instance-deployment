@@ -7,7 +7,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Modified to use ec2 instance.
+          Modified to use ec2 instance deploy 2.
         </p>
         <a
           className="App-link"
