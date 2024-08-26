@@ -22,7 +22,7 @@ jobs:
           npm run build
           sudo mkdir -p /var/www/html
           sudo cp -r ./build/* /var/www/html
-          echo ls "/var/www/html"
+          ls -la /var/www/html
 
       - name: Restart Nginx
         run: |
